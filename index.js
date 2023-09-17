@@ -31,9 +31,9 @@ const fileFilter = (req, file, cb) => {
 };
 const app = express();
 dotenv.config();
+app.use(cors());
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors());
 
 app.use("/images", express.static(path.join(__dirname, "images")));
 import postsRoutes from "./routes/posts.js";
